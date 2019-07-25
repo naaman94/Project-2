@@ -1,7 +1,9 @@
 $(document).ready(function () {
     // function startup() {    
-    for (let i = 0; i < 16; i++) {
-        $("#master div:nth-child(" + i + ")").class("col-3 img" + i);
+    for (let i = 0; i <= 16; i++) {
+        var x = Math.round(Math.random() * 16);
+
+        $("#master div:nth-child(" + i + ")").addClass("col-3 img" + i + " order-" + x);
     }
 });
 
