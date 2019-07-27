@@ -1,53 +1,93 @@
+var act = { "username": "naaman", "password": "Ab123456@" }
+// var arrColor = ["https://dummyimage.com/200x200/d62462/4196e5",
+//     "https://dummyimage.com/200x200/d62462/4196e5",
+//     "https://dummyimage.com/200x200/52cc10/4196e5",
+//     "https://dummyimage.com/200x200/52cc10/4196e5",
+//     "https://dummyimage.com/200x200/dbca14/4196e5",
+//     "https://dummyimage.com/200x200/dbca14/4196e5",
+//     "https://dummyimage.com/200x200/9e9b7e/4196e5",
+//     "https://dummyimage.com/200x200/9e9b7e/4196e5",
+//     "https://dummyimage.com/200x200/007aeb/4196e5",
+//     "https://dummyimage.com/200x200/007aeb/4196e5",
+//     "https://dummyimage.com/200x200/00c2f2/4196e5",
+//     "https://dummyimage.com/200x200/00c2f2/4196e5",
+//     "https://dummyimage.com/200x200/ff0000/4196e5",
+//     "https://dummyimage.com/200x200/ff0000/4196e5",
+//     "https://dummyimage.com/200x200/000000/4196e5",
+//     "https://dummyimage.com/200x200/000000/4196e5",
+//     "https://dummyimage.com/200x200/31bfb1/4196e5",
+//     "https://dummyimage.com/200x200/31bfb1/4196e5",
+//     "https://dummyimage.com/200x200/507cc0/4196e5",
+//     "https://dummyimage.com/200x200/507cc0/4196e5",
+//     "https://dummyimage.com/200x200/e4e4e4/4196e5",
+//     "https://dummyimage.com/200x200/e4e4e4/4196e5",
+//     "https://dummyimage.com/200x200/000000/4196e5",
+//     "https://dummyimage.com/200x200/000000/4196e5"
+
+// ];
 var color = {}
 var checkColor = { "check1st": "", "check2nd": "" }
 var count = 0 //var for counter
+var col = ele = 16;
+
 function rand() { return Math.round(Math.random() * 16); }
 
-$(document).ready(function () {
-    for (let i = 1; i <= 16; i++) {
-        $("#master div:nth-child(" + i + ")").addClass("col-3 img" + i + " order-" + rand())
-        $("#master div:nth-child(" + i + ") img ").addClass("img-thumbnail allImg").attr("id", "img" + i);
-        color["img" + i] = $("#master div:nth-child(" + i + ") img ").attr("srcset");
-        // $("#master div:nth-child(" + (i + 1) + ")").addClass("col-3 img" + i + " order-" + rand())
-        // $("#master div:nth-child(" + (i + 1) + ") img ").addClass("img-thumbnail allImg").attr("id", "img" + i);
-        // color["img" + (i + 1)] = $("#master div:nth-child(" + (i + 1) + ") img ").attr("srcset");
+$('input:radio[name=numOfblocks1]:checked').change(function () {
+    if ($("input[name='numOfblocks1']:checked").val() == "12") {
+        col = 4;
+        ele = 12;
+
     }
-})
-$(document).ready(function () {
-    for (let i = 1; i <= 16; i++) {
-        $('#master').on('click', '.img' + i, function () {
-
-            if (checkColor.check1st == "") {
-                checkColor.index1st = "#img" + i
-                checkColor.check1st = "img" + odd(i)
-
-                $("#img" + i).attr("srcset", color["img" + i])
-            }
-            else {
-                checkColor.index2nd = "#img" + i
-                checkColor.check2nd = "img" + odd(i)
-                $("#img" + i).attr("srcset", color["img" + i])
-                if (checkColor.check1st == checkColor.check2nd) {
-
-                    checkColor.check1st = checkColor.check2nd = ""
-                    count++
-                    if (count == 8) { alert("yes you win") }
-
-                }
-                else {
-                    hiden(checkColor.index1st + "," + checkColor.index2nd, 1000)
-                    checkColor.check1st = checkColor.check2nd = ""
-
-
-                }
-            }
-
-
-
-        });
+    if ($("input[name='numOfblocks1']:checked").val() == "16") {
+        col = 3;
+        ele = 16;
     }
+    if ($("input[name='numOfblocks1']:checked").val() == "20") {
+        col = 3;
+        ele = 20;
+    }
+    for (let i = 1; 0 < ele; i++)
+        $("#master div:nth-child(" + i + ") img ").attr("srcset", checkColor[i]);
 });
 
+$(document).ready(function () {
+    for (let i = 1; i <= ele; i++) {
+        $(document).ready(function () {
+            $("#master div:nth-child(" + i + ")").addClass("col-" + col + " img" + i + " order-" + rand())
+            $("#master div:nth-child(" + i + ") img ").addClass("img-thumbnail allImg").attr("id", "img" + i);
+            color["img" + i] = $("#master div:nth-child(" + i + ") img ").attr("srcset");
+
+        })
+    }
+    $(document).ready(function () {
+        for (let i = 1; i <= 16; i++) {
+            $('#master').on('click', '.img' + i, function () {
+                console.log(i)
+                if (checkColor.check1st == "") {
+                    checkColor.index1st = "#img" + i
+                    checkColor.check1st = "img" + odd(i)
+                    $("#img" + i).attr("srcset", color["img" + i])
+                }
+                else {
+                    checkColor.index2nd = "#img" + i
+                    checkColor.check2nd = "img" + odd(i)
+                    $("#img" + i).attr("srcset", color["img" + i])
+                    if (checkColor.check1st == checkColor.check2nd) {
+                        checkColor.check1st = checkColor.check2nd = ""
+                        count++
+                        if (count == 8) { alert("yes you win") }
+                    }
+                    else {
+                        hiden(checkColor.index1st + "," + checkColor.index2nd, 1000)
+
+                        checkColor.check1st = checkColor.check2nd = ""
+                    }
+                }
+            });
+        }
+    });
+
+})
 function hiden(address, time) {
     setTimeout(function () {
         $(address).attr("srcset", "https://dummyimage.com/200x200/ffffff/4196e5")

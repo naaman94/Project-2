@@ -11,39 +11,81 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <title>Hello, world!</title>
+  <title>LYTPRO Game</title>
 
 </head>
 
 <body>
-
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <!-- navbar-brand for your company, product, or project name. -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
-      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class="navbar-header d-flex col">
+      <a class="navbar-brand" href="#">LYT<b>PRO</b></a>
+      <button type="button" data-target="#navbarCollapse" data-toggle="collapse"
+        class="navbar-toggle navbar-toggler ml-auto">
+        <span class="navbar-toggler-icon"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <!-- Collection of nav links, forms, and other content for toggling -->
+    <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+      <div class="nav navbar-nav">
+        <a class="nav-link" data-toggle="modal" data-target="#exampleModalCenter">Edit</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right ml-auto">
 
-    <div class="collapse navbar-collapse" id="navbarColor01">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
+        <!-- login -->
+
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a data-toggle="dropdown" id="aInput" class="btn btn-primary dropdown-toggle  get-started-btn  mt-1 mb-1"
+            value=0>
+            Login</a>
+          <ul class="dropdown-menu form-wrapper">
+            <li>
+              <form>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Username" required="required">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" placeholder="Password" required="required">
+                </div>
+                <input type="submit" class="btn btn-primary btn-block" value="Login">
+                <div class="form-footer">
+                  <a href="#">Forgot Your password?</a>
+                </div>
+              </form>
+            </li>
+          </ul>
         </li>
+
+        <!-- signin -->
+
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a data-toggle="dropdown" class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1">Sign
+            up</a>
+          <ul class="dropdown-menu form-wrapper">
+            <li>
+              <form action="/examples/actions/confirmation.php" method="post">
+                <p class="hint-text">Fill in this form to create your account!</p>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Username" required="required">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" placeholder="Password" required="required">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" placeholder="Confirm Password" required="required">
+                </div>
+                <div class="form-group">
+                  <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a
+                      href="#">Terms &amp; Conditions</a></label>
+                </div>
+                <input type="submit" class="btn btn-primary btn-block" value="Sign up">
+              </form>
+            </li>
+          </ul>
         </li>
       </ul>
-      <form class="form-inline">
-        <input class="form-control mr-sm-2" type="text" placeholder="Username" aria-label="Username">
-        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Login</button>
-      </form>
     </div>
   </nav>
 
@@ -65,20 +107,58 @@
       <div><img srcset="https://dummyimage.com/200x200/ff0000/4196e5" alt="Responsive image"></div>
       <div><img srcset="https://dummyimage.com/200x200/000000/4196e5" alt="Responsive image"></div>
       <div><img srcset="https://dummyimage.com/200x200/000000/4196e5" alt="Responsive image"></div>
+      <div><img srcset="https://dummyimage.com/200x200/31bfb1/4196e5" alt="Responsive image"></div>
+      <div><img srcset="https://dummyimage.com/200x200/31bfb1/4196e5" alt="Responsive image"></div>
+      <div><img srcset="https://dummyimage.com/200x200/507cc0/4196e5" alt="Responsive image"></div>
+      <div><img srcset="https://dummyimage.com/200x200/507cc0/4196e5" alt="Responsive image"></div>
     </div>
 
-  </div>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Game Editor</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="numOfblocks1" name="numOfblocks1" class="custom-control-input" value="12">
+              <label class="custom-control-label" for="numOfblocks1">12 blocks</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input checked type="radio" id="numOfblocks2" name="numOfblocks1" class="custom-control-input" value="16">
+              <label class="custom-control-label" for="numOfblocks2">16 blocks</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="numOfblocks3" name="numOfblocks1" class="custom-control-input" value="20">
+              <label class="custom-control-label" for="numOfblocks3">20 blocks</label>
+            </div>
 
 
 
 
-  <script src="jquery.js"></script>
-  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary editLogin" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="popLogin" data-dismiss="modal">Edit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"></script> -->
+      crossorigin="anonymous"></script>
+
 </body>
 
 </html>
