@@ -16,6 +16,8 @@
 </head>
 
 <body>
+
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="navbar-header d-flex col">
       <a class="navbar-brand" href="#">LYT<b>PRO</b></a>
@@ -112,53 +114,70 @@
       <div><img alt="Responsive image"></div>
       <div><img alt="Responsive image"></div>
     </div>
+  </div>
 
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalCenterTitle">Game Editor</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Game Settings</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <div class="custom-control custom-radio custom-control-inline">
+            <input checked type="radio" id="numOfblocks1" name="numOfblocks1" class="custom-control-input" value="12">
+            <label class="custom-control-label" for="numOfblocks1">12 blocks</label>
           </div>
-          <div class="modal-body">
-
-            <div class="custom-control custom-radio custom-control-inline">
-              <input checked type="radio" id="numOfblocks1" name="numOfblocks1" class="custom-control-input" value="12">
-              <label class="custom-control-label" for="numOfblocks1">12 blocks</label>
-            </div>
-            <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" id="numOfblocks2" name="numOfblocks1" class="custom-control-input" value="16">
-              <label class="custom-control-label" for="numOfblocks2">16 blocks</label>
-            </div>
-            <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" id="numOfblocks3" name="numOfblocks1" class="custom-control-input" value="20">
-              <label class="custom-control-label" for="numOfblocks3">20 blocks</label>
-            </div>
-
-
-
-
-
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="numOfblocks2" name="numOfblocks1" class="custom-control-input" value="16">
+            <label class="custom-control-label" for="numOfblocks2">16 blocks</label>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary editLogin" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="edit" data-dismiss="modal">Edit</button>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="numOfblocks3" name="numOfblocks1" class="custom-control-input" value="20"
+              data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
+            <label class="custom-control-label" for="numOfblocks3">20 blocks</label>
           </div>
+          <br><br>
+
+          <div class="">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-secondary active" data-toggle="tooltip" data-placement="bottom"
+                title="The image will shown for 10s">
+                <input type="radio" name="options" id="option1" autocomplete="off" checked> Easy
+              </label>
+              <label class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom"
+                title="The image will shown for 5s">
+                <input type="radio" name="options" id="option2" autocomplete="off"> Medium
+              </label>
+              <label class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="There is no Timer">
+                <input type="radio" name="options" id="option3" autocomplete="off"> Hard
+              </label>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary editLogin" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary " id="edit" data-dismiss="modal">Edit</button>
         </div>
       </div>
     </div>
+  </div>
 
-    <script src="jquery.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"></script>
-
+  <script src="jquery.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

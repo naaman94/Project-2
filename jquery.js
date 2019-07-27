@@ -29,50 +29,48 @@ var color = {}
 var checkColor = { "check1st": "", "check2nd": "" }
 var count = 0 //var for counter
 var col = 3, ele = 12;
+var time=5000;
+
+
 selectNumOfBlock(ele)
-function selectNumOfBlock(ele) {
-    for (let i = 1; i <= 20; i++) {
-        $("#master div:nth-child(" + i + ")").attr("hidden", false);
-    }
-    for (let i = ele + 1; i <= 20; i++) {
-        $("#master div:nth-child(" + i + ")").attr("hidden", true);
+hiden(".allImg", time)
 
-    }
-}
-
-function rand() { return Math.round(Math.random() * 16); }
 $("#edit").click(function () {
+    if ($("input[name='options']:checked").attr("id") == "option1")  
+    {time =10000}
+    if ($("input[name='options']:checked").attr("id") == "option2")  
+    {time =5000}
+    if ($("input[name='options']:checked").attr("id") == "option3")  
+    {time =0}
+    
     if ($("input[name='numOfblocks1']:checked").val() == "12") {
         col = 4;
         ele = 12;
-        selectNumOfBlock(ele);
+        selectNumOfBlock(ele);    
+        show();
+        hiden(".allImg", time)
     }
     if ($("input[name='numOfblocks1']:checked").val() == "16") {
         col = 3;
         ele = 16;
-        selectNumOfBlock(ele);
+        selectNumOfBlock(ele);    
+        show();
+        hiden(".allImg", time)
     }
     if ($("input[name='numOfblocks1']:checked").val() == "20") {
         col = 2;
         ele = 20;
-        selectNumOfBlock(ele);
+        selectNumOfBlock(ele);    
+        show();
+        hiden(".allImg", time)
     }
-});
+   });
 
 $(document).ready(function () {
-    for (let i = 1; i <= 20; i++) {
+    show();
 
-        $(document).ready(function () {
-            $("#master div:nth-child(" + i + ") img ").attr("srcset", arrColor[i]);
-            $("#master div:nth-child(" + i + ")").addClass("col-" + col + " img" + i + " order-" + rand())
-            $("#master div:nth-child(" + i + ") img ").addClass("img-thumbnail allImg").attr("id", "img" + i);
-            color["img" + i] = $("#master div:nth-child(" + i + ") img ").attr("srcset");
-
-        })
-
-    }
     $(document).ready(function () {
-        for (let i = 1; i <= 20; i++) {
+        for (let i = 1; i <= ele; i++) {
             $('#master').on('click', '.img' + i, function () {
                 console.log(i)
                 if (checkColor.check1st == "") {
@@ -86,6 +84,7 @@ $(document).ready(function () {
                     $("#img" + i).attr("srcset", color["img" + i])
                     if (checkColor.check1st == checkColor.check2nd) {
                         checkColor.check1st = checkColor.check2nd = ""
+
                         count++
                         if (count == 8) { alert("yes you win") }
                     }
@@ -105,7 +104,7 @@ function hiden(address, time) {
         $(address).attr("srcset", "https://dummyimage.com/200x200/ffffff/4196e5")
     }, time);
 }
-hiden(".allImg", 4000)
+
 
 function odd(i) {
     if (i % 2 == 0)
@@ -113,3 +112,33 @@ function odd(i) {
     else
         return i
 }
+function show() {
+    for (let i = 1; i <= 20; i++) {
+
+        $(document).ready(function () {
+            $("#master div:nth-child(" + i + ") img ").attr("srcset", arrColor[i]);
+            $("#master div:nth-child(" + i + ")").addClass("col-" + col + " img" + i + " order-" + rand())
+            $("#master div:nth-child(" + i + ") img ").addClass("img-thumbnail allImg").attr("id", "img" + i);
+            color["img" + i] = $("#master div:nth-child(" + i + ") img ").attr("srcset");
+
+        })
+
+    }
+}
+
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+
+  function selectNumOfBlock(ele) {
+    for (let i = 1; i <= 20; i++) {
+        $("#master div:nth-child(" + i + ")").attr("hidden", false);
+    }
+    for (let i = ele + 1; i <= 20; i++) {
+        $("#master div:nth-child(" + i + ")").attr("hidden", true);
+
+    }
+}
+
+function rand() { return Math.round(Math.random() * 16); }
