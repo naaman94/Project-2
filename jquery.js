@@ -1,66 +1,78 @@
 var act = { "username": "naaman", "password": "Ab123456@" }
-// var arrColor = ["https://dummyimage.com/200x200/d62462/4196e5",
-//     "https://dummyimage.com/200x200/d62462/4196e5",
-//     "https://dummyimage.com/200x200/52cc10/4196e5",
-//     "https://dummyimage.com/200x200/52cc10/4196e5",
-//     "https://dummyimage.com/200x200/dbca14/4196e5",
-//     "https://dummyimage.com/200x200/dbca14/4196e5",
-//     "https://dummyimage.com/200x200/9e9b7e/4196e5",
-//     "https://dummyimage.com/200x200/9e9b7e/4196e5",
-//     "https://dummyimage.com/200x200/007aeb/4196e5",
-//     "https://dummyimage.com/200x200/007aeb/4196e5",
-//     "https://dummyimage.com/200x200/00c2f2/4196e5",
-//     "https://dummyimage.com/200x200/00c2f2/4196e5",
-//     "https://dummyimage.com/200x200/ff0000/4196e5",
-//     "https://dummyimage.com/200x200/ff0000/4196e5",
-//     "https://dummyimage.com/200x200/000000/4196e5",
-//     "https://dummyimage.com/200x200/000000/4196e5",
-//     "https://dummyimage.com/200x200/31bfb1/4196e5",
-//     "https://dummyimage.com/200x200/31bfb1/4196e5",
-//     "https://dummyimage.com/200x200/507cc0/4196e5",
-//     "https://dummyimage.com/200x200/507cc0/4196e5",
-//     "https://dummyimage.com/200x200/e4e4e4/4196e5",
-//     "https://dummyimage.com/200x200/e4e4e4/4196e5",
-//     "https://dummyimage.com/200x200/000000/4196e5",
-//     "https://dummyimage.com/200x200/000000/4196e5"
+var arrColor = [0, "https://dummyimage.com/200x200/d62462/4196e5",
+    "https://dummyimage.com/200x200/d62462/4196e5",
+    "https://dummyimage.com/200x200/52cc10/4196e5",
+    "https://dummyimage.com/200x200/52cc10/4196e5",
+    "https://dummyimage.com/200x200/dbca14/4196e5",
+    "https://dummyimage.com/200x200/dbca14/4196e5",
+    "https://dummyimage.com/200x200/9e9b7e/4196e5",
+    "https://dummyimage.com/200x200/9e9b7e/4196e5",
+    "https://dummyimage.com/200x200/007aeb/4196e5",
+    "https://dummyimage.com/200x200/007aeb/4196e5",
+    "https://dummyimage.com/200x200/00c2f2/4196e5",
+    "https://dummyimage.com/200x200/00c2f2/4196e5",
+    "https://dummyimage.com/200x200/ff0000/4196e5",
+    "https://dummyimage.com/200x200/ff0000/4196e5",
+    "https://dummyimage.com/200x200/000000/4196e5",
+    "https://dummyimage.com/200x200/000000/4196e5",
+    "https://dummyimage.com/200x200/31bfb1/4196e5",
+    "https://dummyimage.com/200x200/31bfb1/4196e5",
+    "https://dummyimage.com/200x200/507cc0/4196e5",
+    "https://dummyimage.com/200x200/507cc0/4196e5",
+    "https://dummyimage.com/200x200/e4e4e4/4196e5",
+    "https://dummyimage.com/200x200/e4e4e4/4196e5",
+    "https://dummyimage.com/200x200/000000/4196e5",
+    "https://dummyimage.com/200x200/000000/4196e5"
 
-// ];
+];
 var color = {}
 var checkColor = { "check1st": "", "check2nd": "" }
 var count = 0 //var for counter
-var col = ele = 16;
+var col = 3, ele = 12;
+selectNumOfBlock(ele)
+function selectNumOfBlock(ele) {
+    for (let i = 1; i <= 20; i++) {
+        $("#master div:nth-child(" + i + ")").attr("hidden", false);
+    }
+    for (let i = ele + 1; i <= 20; i++) {
+        $("#master div:nth-child(" + i + ")").attr("hidden", true);
+
+    }
+}
 
 function rand() { return Math.round(Math.random() * 16); }
-
-$('input:radio[name=numOfblocks1]:checked').change(function () {
+$("#edit").click(function () {
     if ($("input[name='numOfblocks1']:checked").val() == "12") {
         col = 4;
         ele = 12;
-
+        selectNumOfBlock(ele);
     }
     if ($("input[name='numOfblocks1']:checked").val() == "16") {
         col = 3;
         ele = 16;
+        selectNumOfBlock(ele);
     }
     if ($("input[name='numOfblocks1']:checked").val() == "20") {
-        col = 3;
+        col = 2;
         ele = 20;
+        selectNumOfBlock(ele);
     }
-    for (let i = 1; 0 < ele; i++)
-        $("#master div:nth-child(" + i + ") img ").attr("srcset", checkColor[i]);
 });
 
 $(document).ready(function () {
-    for (let i = 1; i <= ele; i++) {
+    for (let i = 1; i <= 20; i++) {
+
         $(document).ready(function () {
+            $("#master div:nth-child(" + i + ") img ").attr("srcset", arrColor[i]);
             $("#master div:nth-child(" + i + ")").addClass("col-" + col + " img" + i + " order-" + rand())
             $("#master div:nth-child(" + i + ") img ").addClass("img-thumbnail allImg").attr("id", "img" + i);
             color["img" + i] = $("#master div:nth-child(" + i + ") img ").attr("srcset");
 
         })
+
     }
     $(document).ready(function () {
-        for (let i = 1; i <= 16; i++) {
+        for (let i = 1; i <= 20; i++) {
             $('#master').on('click', '.img' + i, function () {
                 console.log(i)
                 if (checkColor.check1st == "") {
