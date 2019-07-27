@@ -1,5 +1,5 @@
 var act = { "username": "naaman", "password": "Ab123456@" }
-var arrColor = [0, "https://dummyimage.com/200x200/d62462/4196e5",
+var arrColor = ["question-mark.png", "https://dummyimage.com/200x200/d62462/4196e5",
     "https://dummyimage.com/200x200/d62462/4196e5",
     "https://dummyimage.com/200x200/52cc10/4196e5",
     "https://dummyimage.com/200x200/52cc10/4196e5",
@@ -29,56 +29,57 @@ var color = {}
 var checkColor = { "check1st": "", "check2nd": "" }
 var count = 0 //var for counter
 var col = 3, ele = 12;
-var time=5000;
+var time = 5000;
 
 
 selectNumOfBlock(ele)
 hiden(".allImg", time)
 
 $("#edit").click(function () {
-    if ($("input[name='options']:checked").attr("id") == "option1")  
-    {time =10000}
-    if ($("input[name='options']:checked").attr("id") == "option2")  
-    {time =5000}
-    if ($("input[name='options']:checked").attr("id") == "option3")  
-    {time =0}
-    
+    if ($("input[name='options']:checked").attr("id") == "option1") { time = 10000 }
+    if ($("input[name='options']:checked").attr("id") == "option2") { time = 5000 }
+    if ($("input[name='options']:checked").attr("id") == "option3") { time = 0 }
+
     if ($("input[name='numOfblocks1']:checked").val() == "12") {
         col = 4;
         ele = 12;
-        selectNumOfBlock(ele);    
+        selectNumOfBlock(ele);
         show();
         hiden(".allImg", time)
+        chk();
     }
     if ($("input[name='numOfblocks1']:checked").val() == "16") {
         col = 3;
         ele = 16;
-        selectNumOfBlock(ele);    
+        selectNumOfBlock(ele);
         show();
         hiden(".allImg", time)
+        chk();
     }
     if ($("input[name='numOfblocks1']:checked").val() == "20") {
         col = 2;
         ele = 20;
-        selectNumOfBlock(ele);    
+        selectNumOfBlock(ele);
         show();
         hiden(".allImg", time)
+        chk();
     }
-   });
+});
 
-$(document).ready(function () {
-    show();
+show();
+chk();
 
+function chk() {
     $(document).ready(function () {
         for (let i = 1; i <= ele; i++) {
             $('#master').on('click', '.img' + i, function () {
-                console.log(i)
-                if (checkColor.check1st == "") {
+                
+                if (checkColor.check1st == "" && ($("#img" + i).attr("srcset") == arrColor[0])) {
                     checkColor.index1st = "#img" + i
                     checkColor.check1st = "img" + odd(i)
                     $("#img" + i).attr("srcset", color["img" + i])
                 }
-                else {
+                else if ((checkColor.check2nd == "" && ($("#img" + i).attr("srcset") == arrColor[0]))) {
                     checkColor.index2nd = "#img" + i
                     checkColor.check2nd = "img" + odd(i)
                     $("#img" + i).attr("srcset", color["img" + i])
@@ -86,22 +87,25 @@ $(document).ready(function () {
                         checkColor.check1st = checkColor.check2nd = ""
 
                         count++
-                        if (count == 8) { alert("yes you win") }
+                        if (count == ele / 2) {
+                            youWin();
+                        }
                     }
                     else {
+                        $('#master').off('click');
                         hiden(checkColor.index1st + "," + checkColor.index2nd, 1000)
-
                         checkColor.check1st = checkColor.check2nd = ""
                     }
                 }
             });
         }
     });
+}
 
-})
 function hiden(address, time) {
     setTimeout(function () {
-        $(address).attr("srcset", "https://dummyimage.com/200x200/ffffff/4196e5")
+        $(address).attr("srcset", arrColor[0])
+        chk()
     }, time);
 }
 
@@ -126,12 +130,7 @@ function show() {
     }
 }
 
-
-$(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-  })
-
-  function selectNumOfBlock(ele) {
+function selectNumOfBlock(ele) {
     for (let i = 1; i <= 20; i++) {
         $("#master div:nth-child(" + i + ")").attr("hidden", false);
     }
@@ -141,4 +140,10 @@ $(function () {
     }
 }
 
-function rand() { return Math.round(Math.random() * 16); }
+function rand() { return Math.round(Math.random() * 20); }
+
+function youWin() {
+
+
+
+}

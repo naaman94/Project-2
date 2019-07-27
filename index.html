@@ -126,24 +126,25 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body ">
+          <div class="d-flex justify-content-center">
+            <div class="custom-control custom-radio custom-control-inline">
+              <input checked type="radio" id="numOfblocks1" name="numOfblocks1" class="custom-control-input" value="12">
+              <label class="custom-control-label" for="numOfblocks1">12 blocks</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="numOfblocks2" name="numOfblocks1" class="custom-control-input" value="16">
+              <label class="custom-control-label" for="numOfblocks2">16 blocks</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="numOfblocks3" name="numOfblocks1" class="custom-control-input" value="20"
+                data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
+              <label class="custom-control-label" for="numOfblocks3">20 blocks</label>
+            </div>
+          </div>
+          <br>
 
-          <div class="custom-control custom-radio custom-control-inline">
-            <input checked type="radio" id="numOfblocks1" name="numOfblocks1" class="custom-control-input" value="12">
-            <label class="custom-control-label" for="numOfblocks1">12 blocks</label>
-          </div>
-          <div class="custom-control custom-radio custom-control-inline">
-            <input type="radio" id="numOfblocks2" name="numOfblocks1" class="custom-control-input" value="16">
-            <label class="custom-control-label" for="numOfblocks2">16 blocks</label>
-          </div>
-          <div class="custom-control custom-radio custom-control-inline">
-            <input type="radio" id="numOfblocks3" name="numOfblocks1" class="custom-control-input" value="20"
-              data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
-            <label class="custom-control-label" for="numOfblocks3">20 blocks</label>
-          </div>
-          <br><br>
-
-          <div class="">
+          <div class="d-flex justify-content-center">
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
               <label class="btn btn-secondary active" data-toggle="tooltip" data-placement="bottom"
                 title="The image will shown for 10s">
@@ -158,7 +159,6 @@
               </label>
             </div>
           </div>
-
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary editLogin" data-dismiss="modal">Close</button>
