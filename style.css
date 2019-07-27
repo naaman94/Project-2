@@ -11,6 +11,7 @@
 *{
   margin: 0;
 }
+img{margin: 15px}
   body{
 		font-family: 'Varela Round', sans-serif;
 	}
@@ -112,7 +113,7 @@
 
   }
   #aInput{
-    color: rgb(0, 0, 0);
+    color: #31bfb1;
 		background: #ffffff !important;
 		min-width: 120px;
 		margin: 8px;
@@ -225,7 +226,7 @@
 	.navbar .navbar-right .dropdown-toggle::after {
 		display: none;
 	}
-	@media (min-width: 1200px){
+	/* @media (min-width: 1200px){
 		.form-inline .input-group {
 			width: 300px;
 			margin-left: 30px;
@@ -247,4 +248,65 @@
 		.navbar .nav .btn-primary, .navbar .nav .btn-primary:active {
 			display: block;
 		}
-	}
+	} */
+
+
+	
+
+
+
+
+
+/* 
+*{
+    margin: 0;
+  }
+  img{margin: 15px}
+  .navbar .navbar-brand b {
+      font-weight: bold;
+      color: #33cabb;		
+  }.navbar .nav li {
+          position: relative;
+      }
+      .navbar .nav .btn-primary, .navbar .nav .btn-primary:active {
+          color: #fff;
+          background: #33cabb;
+          padding-top: 8px;
+          padding-bottom: 6px;
+          vertical-align: middle;
+          border: none;}
+
+
+    #aInput{
+      color: rgb(0, 0, 0);
+          background: #ffffff !important;
+          min-width: 120px;
+          margin: 8px;
+    }
+      .navbar .dropdown-menu {
+          border-radius: 1px;
+          border-color: #e5e5e5;
+          box-shadow: 0 2px 8px rgba(0,0,0,.05);
+      }
+      .navbar .nav .dropdown-menu li {
+          color: #999;
+          font-weight: normal;
+      }
+      .navbar .nav .dropdown-menu li a, .navbar .nav .dropdown-menu li a:hover, .navbar .nav .dropdown-menu li a:focus {
+          padding: 8px 20px;
+          line-height: normal;
+      }
+      .navbar .navbar-form {
+          border: none;
+      }
+      .navbar .dropdown-menu.form-wrapper {
+          width: 280px;
+          padding: 20px;
+          left: auto;
+          right: 0;
+          font-size: 14px;
+      }
+      .navbar .dropdown-menu.form-wrapper a {		
+          color: #33cabb;
+          padding: 0 !important;
+      } */
