@@ -17,7 +17,7 @@
 
 <body>
 
-
+  <!-- ........................................................................navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="navbar-header d-flex col">
       <a class="navbar-brand" href="#">Memory<b>Matching</b></a>
@@ -56,7 +56,7 @@
       </ul>
     </div>
   </nav>
-
+  <!-- .........................................................................image -->
   <div class="container-fluid w-75 ">
     <div class="row " id="master">
       <div><img alt="Responsive image"></div>
@@ -85,17 +85,18 @@
       <div><img alt="Responsive image"></div>
     </div>
   </div>
-
+  <!-- .......................................................................settings -->
   <div class="modal fade" id="gameset" tabindex="-1" role="dialog" aria-labelledby="gamesetTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="gamesetTitle">Game Settings</h5>
+          <h5 class="modal-title" id="gamesetTitle">Welecome to Memory Matching</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body ">
+          <p class="d-flex justify-content-center">Number of blocs</p>
           <div class="d-flex justify-content-center">
             <div class="custom-control custom-radio custom-control-inline">
               <input checked type="radio" id="numOfblocks1" name="numOfblocks1" class="custom-control-input" value="12">
@@ -112,16 +113,16 @@
             </div>
           </div>
           <br>
-
+          <p class="d-flex justify-content-center">The level</p>
           <div class="d-flex justify-content-center">
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
-              <label class="btn btn-secondary active" data-toggle="tooltip" data-placement="bottom"
+              <label class="btn btn-secondary " data-toggle="tooltip" data-placement="bottom"
                 title="The image will shown for 10s">
-                <input type="radio" name="options" id="option1" autocomplete="off" checked> Easy
+                <input type="radio" name="options" id="option1" autocomplete="off"> Easy
               </label>
-              <label class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom"
+              <label class="btn btn-secondary active" data-toggle="tooltip" data-placement="bottom"
                 title="The image will shown for 5s">
-                <input type="radio" name="options" id="option2" autocomplete="off"> Medium
+                <input type="radio" name="options" id="option2" autocomplete="off" checked> Medium
               </label>
               <label class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="There is no Timer">
                 <input type="radio" name="options" id="option3" autocomplete="off"> Hard
@@ -132,25 +133,16 @@
 
           <div class="modal-footer">
             <div class="btn-group-toggle" data-toggle="buttons">
-              <button type="button" class="btn btn-info editLogin" id="hints" data-dismiss="modal">Hints</button>
+              <!-- <button type="button" class="btn btn-info editLogin" id="hints" data-dismiss="modal">Hints</button> -->
               <button type="button" class="btn btn-secondary editLogin" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary " id="edit" data-dismiss="modal">Edit</button>
+              <button type="button" class="btn btn-primary " id="start" data-dismiss="modal">start</button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <img src="congratulations_6.jpeg" alt="cong">
-      </div>
-    </div>
-  </div>
-
+  <!-- .......................................................................congratulations -->
   <div class="modal fade" id="congratulations" tabindex="-1" role="dialog" aria-labelledby="congratulationsTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -171,6 +163,13 @@
       </div>
     </div>
   </div>
+  <!-- .......................................................................footer -->
+  <div class="footer-copyright text-center py-3"><span id="srt">©</span> 2019 Copyright:
+    <a href="#"> OJOCA</a>
+  </div>
+
+
+
 
   <script src="jquery.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

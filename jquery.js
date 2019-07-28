@@ -1,28 +1,28 @@
-var act = { "username": "naaman", "password": "Ab123456@" }
-var arrColor = ["question-mark.png", "https://dummyimage.com/200x200/d62462/4196e5",
+var arrColor = ["question-mark.png",
+    "https://dummyimage.com/200x200/d62462/4196e5",
     "https://dummyimage.com/200x200/d62462/4196e5",
     "https://dummyimage.com/200x200/52cc10/4196e5",
     "https://dummyimage.com/200x200/52cc10/4196e5",
-    "https://dummyimage.com/200x200/dbca14/4196e5",
-    "https://dummyimage.com/200x200/dbca14/4196e5",
+    "https://dummyimage.com/200x200/ff00ff/4196e5",
+    "https://dummyimage.com/200x200/ff00ff/4196e5",
     "https://dummyimage.com/200x200/9e9b7e/4196e5",
     "https://dummyimage.com/200x200/9e9b7e/4196e5",
     "https://dummyimage.com/200x200/007aeb/4196e5",
     "https://dummyimage.com/200x200/007aeb/4196e5",
-    "https://dummyimage.com/200x200/00c2f2/4196e5",
-    "https://dummyimage.com/200x200/00c2f2/4196e5",
+    "https://dummyimage.com/200x200/3D003D/4196e5",
+    "https://dummyimage.com/200x200/3D003D/4196e5",
     "https://dummyimage.com/200x200/ff0000/4196e5",
     "https://dummyimage.com/200x200/ff0000/4196e5",
     "https://dummyimage.com/200x200/000000/4196e5",
     "https://dummyimage.com/200x200/000000/4196e5",
     "https://dummyimage.com/200x200/31bfb1/4196e5",
     "https://dummyimage.com/200x200/31bfb1/4196e5",
-    "https://dummyimage.com/200x200/507cc0/4196e5",
-    "https://dummyimage.com/200x200/507cc0/4196e5",
+    "https://dummyimage.com/200x200/FFFF00/4196e5",
+    "https://dummyimage.com/200x200/FFFF00/4196e5",
     "https://dummyimage.com/200x200/e4e4e4/4196e5",
     "https://dummyimage.com/200x200/e4e4e4/4196e5",
-    "https://dummyimage.com/200x200/ffff00/4196e5",
-    "https://dummyimage.com/200x200/ffff00/4196e5",
+    "https://dummyimage.com/200x200/FF8C00/4196e5",
+    "https://dummyimage.com/200x200/FF8C00/4196e5",
     "https://dummyimage.com/200x200/ff00ff/4196e5",
     "https://dummyimage.com/200x200/ff00ff/4196e5",
     "https://dummyimage.com/200x200/ff9100/4196e5",
@@ -34,24 +34,24 @@ var checkColor = { "check1st": "", "check2nd": "" }
 var count = 0 //var for counter
 var col = 3, ele = 12;
 var time = 5000;
+$(document).ready(function () {
+    $('#gameset').modal('show');
 
-
-selectNumOfBlock(ele)
-hiden(".allImg", time)
+})
 // for (let i = 1; i <= 20; i++) {
-//     $(document).ready(function () {
-//     $('#master').html("<div><img alt=\"Responsive image\"></div>")
-//     })
+//     $('#master').append("<div><img alt=\"Responsive image\">" + i + "</div>")
 //     console.log(i)
-// }here am trying to make it creat html code in for loop but its not work 
-$("#edit").click(function () {
+// }
+// here am trying to make it creat html code in for loop but its not work to not repate the image
+$("#start").click(function () {
     if ($("input[name='options']:checked").attr("id") == "option1") { time = 10000 }
     if ($("input[name='options']:checked").attr("id") == "option2") { time = 5000 }
     if ($("input[name='options']:checked").attr("id") == "option3") { time = 0 }
 
     if ($("input[name='numOfblocks1']:checked").val() == "12") {
-        col = 4;
+        col = 3;
         ele = 12;
+        count = 0;
         selectNumOfBlock(ele);
         show();
         hiden(".allImg", time)
@@ -60,6 +60,7 @@ $("#edit").click(function () {
     if ($("input[name='numOfblocks1']:checked").val() == "16") {
         col = 3;
         ele = 16;
+        count = 0;
         selectNumOfBlock(ele);
         show();
         hiden(".allImg", time)
@@ -68,6 +69,7 @@ $("#edit").click(function () {
     if ($("input[name='numOfblocks1']:checked").val() == "24") {
         col = 2;
         ele = 24;
+        count = 0;
         selectNumOfBlock(ele);
         show();
         hiden(".allImg", time)
@@ -188,3 +190,7 @@ $(document).ready(function () {
 })
 
 
+$("#srt").dblclick(function () {
+    show();
+    youWin();
+})
