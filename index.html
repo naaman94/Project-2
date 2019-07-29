@@ -32,6 +32,11 @@
     <!-- Collection of nav links, forms, and other content for toggling -->
     <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
       <ul class="nav navbar-nav navbar-right ml-auto">
+        <li class="nav-item">
+          <button hidden type="button" class="btn btn-info editLogin mt-1 mb-1" id="hints" data-dismiss="modal "
+            title="Just for One Time">Hints</button>
+
+        </li>
         <!-- Gamesettings -->
         <li class="nav-item">
           <a data-toggle="modal" data-target="#gameset" id="aInput"
@@ -56,6 +61,7 @@
       </ul>
     </div>
   </nav>
+  <div></div>
   <!-- .........................................................................image -->
   <div class="container-fluid w-75 ">
     <div class="row " id="master">
@@ -133,7 +139,6 @@
 
           <div class="modal-footer">
             <div class="btn-group-toggle" data-toggle="buttons">
-              <!-- <button type="button" class="btn btn-info editLogin" id="hints" data-dismiss="modal">Hints</button> -->
               <button type="button" class="btn btn-secondary editLogin" data-dismiss="modal">Close</button>
               <button type="button" class="btn btn-primary " id="start" data-dismiss="modal">start</button>
             </div>
@@ -154,7 +159,9 @@
           </button>
         </div>
         <div class="modal-body">
-          <h1>congratulations &#128525;</h1>
+          <h1 class="d-flex justify-content-center">Congratulations &#128525;</h1>
+
+          <div id="reslut"></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -164,9 +171,9 @@
     </div>
   </div>
   <!-- .......................................................................footer -->
-  <div class="footer-copyright text-center py-3"><span id="srt">©</span> 2019 Copyright:
+  <footer class="footer-copyright text-center py-3"><span id="srt">©</span> 2019 Copyright:
     <a href="#"> OJOCA</a>
-  </div>
+  </footer>
 
 
 

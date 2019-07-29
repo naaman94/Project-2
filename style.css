@@ -255,11 +255,6 @@ img{margin: 15px}
 	} */
 
 
-	
-
-
-
-
 
 /* 
 *{
@@ -313,4 +308,31 @@ img{margin: 15px}
       .navbar .dropdown-menu.form-wrapper a {		
           color: #33cabb;
           padding: 0 !important;
-      } */
+	  } */
+
+	  .progress-bar {
+		width: 0;
+		font-size: 1rem;
+		animation: progress 2s ease-in-out forwards;
+	  }
+		.title {
+		  opacity: 0;
+		  animation: show 0.35s forwards ease-in-out 0.5s;
+		}
+		  
+	  @keyframes progress {
+		from {
+		  width: 0;
+		}
+		to {
+		  width: 100%;
+		}
+	  } 
+	  @keyframes show  {
+		from {
+		  opacity: 0;
+		}
+		to {
+		  opacity: 1;
+		}
+	  }
